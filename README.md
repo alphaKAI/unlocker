@@ -25,6 +25,7 @@ $ dub build
   
 ## Configuration
 Plase make `config.json` at `~/.config/unlocker` and configure it like:  
+(`<-` means description, but it is not granted expression in JSON, don't write that in your config.json).  
 
 ```json
 {
