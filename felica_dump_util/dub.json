@@ -1,0 +1,12 @@
+{
+	"name": "felica_dump_util",
+	"authors": [
+		"alphakai"
+	],
+	"dependencies": {
+		"libpafe4d": "~>0.0.1"
+	},
+	"description": "Felica dump tool",
+	"copyright": "Copyright © 2017, alphakai",
+	"license": "MIT"
+}

@@ -1,0 +1,7 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"libpafe4d": {"path":"../libpafe4d"},
+		"libusb-d": "0.1.1"
+	}
+}
