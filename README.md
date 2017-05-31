@@ -9,7 +9,7 @@ This software depend on libpafe and libusb, please make sure those are already i
   
 Currently there is a driver for cinnamon using cinnamon-screensaver and a driver for i3
 using i3lock. You can create additional drivers for other environments by implementing them
-in `source/unblocker/driver/` and creating them in `source/unblocker/unblocker.d`.
+in `source/unlocker/driver/` and creating them in `source/unlocker/unlocker.d`.
   
 ## Requirements
 * libpafe
