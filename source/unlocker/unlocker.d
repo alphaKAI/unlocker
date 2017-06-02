@@ -1,7 +1,8 @@
 module unlocker.unlocker;
 import unlocker.key,
        unlocker.driver.driver,
-       unlocker.driver.cinnamon;
+       unlocker.driver.cinnamon,
+       unlocker.driver.i3lock;
 import libpafe4d;
 import std.algorithm,
        std.format,
@@ -13,7 +14,7 @@ import std.stdio;
 class Unlocker {
   private {
     Driver  driver;
-    static immutable provided_drivers = ["cinnamon"];
+    static immutable provided_drivers = ["cinnamon", "i3lock"];
     Key[]   authorized_keys;
     pasori* p;
     felica* f;
@@ -50,6 +51,9 @@ class Unlocker {
       switch (driver) {
         case "cinnamon":
           this.driver = new CinnamonDriver;
+          break;
+        case "i3lock":
+          this.driver = new I3LockDriver;
           break;
         default: break;
       }
