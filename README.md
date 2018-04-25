@@ -6,6 +6,7 @@ This software depend on libpafe and libusb, please make sure those are already i
 ## Supported(Provided) Drivers
 * cinnamon (cinnamon-screensaver)
 * i3 (i3lock)
+* KDE Plasma (kscreenlocker\_greet)
   
 Currently there is a driver for cinnamon using cinnamon-screensaver and a driver for i3
 using i3lock. You can create additional drivers for other environments by implementing them
