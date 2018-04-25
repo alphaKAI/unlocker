@@ -2,7 +2,8 @@ module unlocker.unlocker;
 import unlocker.key,
        unlocker.driver.driver,
        unlocker.driver.cinnamon,
-       unlocker.driver.i3lock;
+       unlocker.driver.i3lock,
+       unlocker.driver.kdeplasma;
 import libpafe4d;
 import std.algorithm,
        std.format,
@@ -14,7 +15,7 @@ import std.stdio;
 class Unlocker {
   private {
     Driver  driver;
-    static immutable provided_drivers = ["cinnamon", "i3lock"];
+    static immutable provided_drivers = ["cinnamon", "i3lock", "kdeplasma"];
     Key[]   authorized_keys;
     pasori* p;
     felica* f;
@@ -55,6 +56,9 @@ class Unlocker {
         case "i3lock":
           this.driver = new I3LockDriver;
           break;
+        case "kdeplasma":
+          this.driver = new KDEPlasmaDriver;
+          break;
         default: break;
       }
     } else {
@@ -71,14 +75,14 @@ class Unlocker {
 
   void unlock(Key key) {
     if (key.isAuthorizedKey(this.authorized_keys)) {
-      writeln("unlock with - ", key);
+      writefln("unlock with[Driver:%s] - %s", this.driver, key);
       driver.unlock;
     }
   }
 
   void lock(Key key) {
     if (key.isAuthorizedKey(this.authorized_keys)) {
-      writeln("lock with - ", key);
+      writefln("lock with[Driver:%s] - %s", this.driver, key);
       driver.lock;
     }
   }
